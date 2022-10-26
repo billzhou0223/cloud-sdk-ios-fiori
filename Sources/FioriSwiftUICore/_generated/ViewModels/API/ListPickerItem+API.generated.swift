@@ -11,6 +11,9 @@ public struct ListPickerItem<Key: View, Value: View> {
 	var destinationView: AnyView? = nil
     private var isModelInit: Bool = false
 	private var isValueNil: Bool = false
+    
+    var isTopLevel: Bool = true
+    @State var showingSheet = false
 
     public init(
         @ViewBuilder key: () -> Key,

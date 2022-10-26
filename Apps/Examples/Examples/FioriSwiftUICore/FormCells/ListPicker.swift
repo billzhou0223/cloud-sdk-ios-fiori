@@ -60,7 +60,7 @@ struct ListPickerItemDataNonIdentifiableExample: View {
             }, configuration:
             ListPickerItemConfiguration(model, id: \.name, children: \.children, selection: $selections, rowContent: { framework in
                 Text(framework.name)
-            }))
+            }, searchFilter: { $0.name.contains($1) }))
         }
         .navigationBarTitle(Text("Form"))
     }
